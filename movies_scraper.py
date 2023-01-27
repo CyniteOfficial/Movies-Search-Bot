@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 
 url_list = {}
-api_key = "Your Api Key"
+api_key = "7c9efdb6398eae89acd3c86a13f83a82a116c545"
 
 
 def search_movies(query):
@@ -34,7 +34,7 @@ def get_movie(query):
         links = movie_page_link.find_all("a", {'rel': 'noopener', 'data-wpel-link': 'internal'})
         final_links = {}
         for i in links:
-            url = f"https://shortnerfly.com/api?api={api_key}&url={i['href']}"
+            url = f"https://omegalinks.in/api?api={api_key}&url={i['href']}"
             response = requests.get(url)
             link = response.json()
             final_links[f"{i.text}"] = link['shortenedUrl']
